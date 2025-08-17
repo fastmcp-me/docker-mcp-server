@@ -141,6 +141,71 @@ npm run dev -- --container-name test-container
 npm run dev -- --container-name prod-container
 ```
 
+## ⚙️ MCP Client Configuration
+
+To use this server with MCP clients like Claude Desktop, add the following configuration:
+
+### Claude Desktop Configuration
+
+Add to your Claude Desktop configuration file:
+
+**Location:**
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
+
+**Configuration:**
+```json
+{
+  "mcpServers": {
+    "docker-mcp": {
+      "command": "npx",
+      "args": [
+        "-y", "docker-mcp-server@latest"
+      ]
+    }
+  }
+}
+```
+
+**With custom container:**
+```json
+{
+  "mcpServers": {
+    "docker-mcp": {
+      "command": "npx",
+      "args": [
+        "-y", "docker-mcp-server@latest",
+        "--container-name", "my-dev-container"
+      ]
+    }
+  }
+}
+```
+
+### Other MCP Clients
+
+For other MCP clients, use the following command:
+```bash
+npx -y docker-mcp-server@latest
+```
+
+### Prerequisites for MCP Usage
+
+1. **Docker container must be running:**
+   ```bash
+   docker run -d --name mcp-container -v ./workspace:/app node:current-bookworm sleep infinity
+   ```
+
+2. **Container should have your project files:**
+   - Mount your workspace directory to `/app` in the container
+   - Ensure the container has necessary development tools installed
+
+3. **Restart Claude Desktop** after adding the configuration
+
+### Verification
+
+After configuration, Claude Desktop should show the Docker MCP server as connected with access to all the available tools for container-based development.
+
 ## 🛠️ Development Commands
 
 ### Container Management
