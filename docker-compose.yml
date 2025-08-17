@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  mcp-container:
+    build:
+      context: .
+      dockerfile: Dockerfile.debian
+      network: host
+    container_name: mcp-container
+    volumes:
+      - ./tmp:/app
+    command: sleep infinity
+    network_mode: host

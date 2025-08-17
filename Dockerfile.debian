@@ -1,0 +1,10 @@
+FROM node:current-bookworm
+
+RUN apt-get update && apt-get install -y git xdg-utils jq
+
+WORKDIR /app
+
+RUN npm install -D @playwright/test@latest
+RUN npx playwright install --with-deps
+
+CMD ["sleep", "infinity"]
