@@ -1,3 +1,10 @@
+[![Add to Cursor](https://fastmcp.me/badges/cursor_dark.svg)](https://fastmcp.me/MCP/Details/1090/docker-container-execution)
+[![Add to VS Code](https://fastmcp.me/badges/vscode_dark.svg)](https://fastmcp.me/MCP/Details/1090/docker-container-execution)
+[![Add to Claude](https://fastmcp.me/badges/claude_dark.svg)](https://fastmcp.me/MCP/Details/1090/docker-container-execution)
+[![Add to ChatGPT](https://fastmcp.me/badges/chatgpt_dark.svg)](https://fastmcp.me/MCP/Details/1090/docker-container-execution)
+[![Add to Codex](https://fastmcp.me/badges/codex_dark.svg)](https://fastmcp.me/MCP/Details/1090/docker-container-execution)
+[![Add to Gemini](https://fastmcp.me/badges/gemini_dark.svg)](https://fastmcp.me/MCP/Details/1090/docker-container-execution)
+
 # Docker MCP Server
 
 A Model Context Protocol (MCP) server that provides Docker container execution capabilities for AI assistants and applications. This server enables isolated execution of commands and file operations within a containerized environment.
